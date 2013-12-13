@@ -4,7 +4,7 @@ window.TodoBackbone = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var router = new TodoBackbone.Routers.Items();
+    new TodoBackbone.Routers.Items();
     Backbone.history.start({pushState: true});
   }
 };
