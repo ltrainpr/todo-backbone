@@ -1,3 +1,7 @@
 <h1>Todo app using Backbone with pure JavaScript</h1>
 
-<%= items %>
+<ul>
+<% _.each(todos.models, function(model) {%>
+	<li><%= model.get('task') %></li>
+<% }) %>
+</ul>
