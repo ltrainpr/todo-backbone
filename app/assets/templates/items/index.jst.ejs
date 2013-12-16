@@ -1,7 +1,9 @@
 <h1>Todo app using Backbone with pure JavaScript</h1>
 
-<ul>
-<% _.each(todos.models, function(model) {%>
-	<li><%= model.get('task') %></li>
-<% }) %>
-</ul>
+<section class="container" id="content">
+	<div class="row">
+	<% _.each(todos.models, function(model) {%>
+		<p><input type="checkbox" class="checkbox"/> <%= model.get('task') %></p>
+	<% }) %>
+	</div>
+</section>
