@@ -1,29 +1,27 @@
 class TodosController < ApplicationController
-	
+	respond_to :json
+
 	def index
-		@todos = Todo.all
-		render json: @todos
+		respond_with Todo.all
 	end
 
 	def show
-		@todo = Todo.find(params[:id])
-		render json: @todo
+    respond_with Todo.find(params[:id])
 	end
 
-	def create
-		@todo = Todo.create(todos_params)
-		render json: @todo
-	end
+  def create
+    respond_with Todo.create(todos_params)
+  end
 
   def update
     @todo = Todo.find(params[:id])
-    render @todo.update_attributes!(todos_params)
+    respond_with @todo.update_attributes!(todos_params)
   end
 
   def destroy
-    @todo = Todo.find(params[:id])
-    @todo.destroy(todos_params)
+    respond_with Todo.destroy(params[:id])
   end
+
 
 	private
 
