@@ -1,12 +1,7 @@
 <h1>Todo app using Backbone with pure JavaScript</h1>
 
-
-	<form id="new_entry">
+	<form id="new_task">
 		<input type="text" name="task" id="new_todo">
 		<input type='submit' value='Add'>
 	</form>
-	<div class="row">
-	<% _.each(todos.models, function(model) {%>
-		<p><input type="checkbox" class="checkbox"/> <%= model.get('task') %></p>
-	<% }) %>
-	</div>
+	<ul id="task_list"></ul>
